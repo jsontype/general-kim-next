@@ -32,8 +32,10 @@ export default function RootLayout({
       >
         <I18nProvider>
           <JotaiProvider>
-            <Navbar />
-            {children}
+            <div className="p-8">
+              <Navbar />
+              {children}
+            </div>
           </JotaiProvider>
         </I18nProvider>
       </body>
