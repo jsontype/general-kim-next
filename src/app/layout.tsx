@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
+import Navbar from './components/molecules/Navbar'
+import { JotaiProvider } from './_providers/JotaiProvider'
+import { I18nProvider } from './_providers/I18nProvider'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -27,7 +30,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <I18nProvider>
+          <JotaiProvider>
+            <div className="p-8">
+              <Navbar />
+              {children}
+            </div>
+          </JotaiProvider>
+        </I18nProvider>
       </body>
     </html>
   )
