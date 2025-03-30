@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from './components/molecules/Navbar'
 import { JotaiProvider } from './_providers/JotaiProvider'
 import { I18nProvider } from './_providers/I18nProvider'
+import { ApolloClientProvider } from './_providers/ApolloProvider'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -32,10 +33,12 @@ export default function RootLayout({
       >
         <I18nProvider>
           <JotaiProvider>
-            <div className="p-8">
-              <Navbar />
-              {children}
-            </div>
+            <ApolloClientProvider>
+              <div className="p-8">
+                <Navbar />
+                {children}
+              </div>
+            </ApolloClientProvider>
           </JotaiProvider>
         </I18nProvider>
       </body>

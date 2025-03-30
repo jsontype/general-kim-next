@@ -11,13 +11,16 @@
     "format:fix": "prettier --write ."
   },
   "dependencies": {
+    "@apollo/client": "^3.13.5",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.4.7",
     "@mui/material": "^6.4.7",
+    "graphql": "^16.10.0",
     "i18next": "^24.2.2",
     "jotai": "^2.12.2",
     "next": "15.2.1",
+    "ra-data-graphql": "^5.7.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-i18next": "^15.4.1"

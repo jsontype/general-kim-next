@@ -36,6 +36,7 @@ export default function Navbar() {
             <NavbarItem link={'/count'} text={t('count')} />
             <NavbarItem link={'/news'} text={t('news')} />
             <NavbarItem link={'/todos'} text={t('todos')} />
+            <NavbarItem link={'/management'} text="management" />
           </Box>
           <SelectLanguage />
         </Box>
