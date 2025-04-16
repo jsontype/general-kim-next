@@ -1,15 +1,14 @@
 'use client'
 
-import { useAtomValue } from 'jotai'
-import { countAtom } from '../../../../store/countAtom'
 import { Typography } from '@mui/material'
 import HomeBoardBox from '../../../atoms/HomeBoardBox'
+import { useAppSelector } from '@/app/util/useAppSelector'
 
 interface Props {
   titleText: string
 }
 const HomeCounterScoreBoard = ({ titleText }: Props) => {
-  const count = useAtomValue(countAtom)
+  const count = useAppSelector((state) => state.counter.value)
 
   return (
     <HomeBoardBox>
