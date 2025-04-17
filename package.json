@@ -16,6 +16,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.4.7",
     "@mui/material": "^6.4.7",
+    "@reduxjs/toolkit": "^2.6.1",
     "graphql": "^16.10.0",
     "i18next": "^24.2.2",
     "jotai": "^2.12.2",
@@ -23,7 +24,8 @@
     "ra-data-graphql": "^5.7.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-i18next": "^15.4.1"
+    "react-i18next": "^15.4.1",
+    "react-redux": "^9.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

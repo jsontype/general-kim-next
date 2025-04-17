@@ -3,24 +3,22 @@
 import React from 'react'
 import Button from '@mui/material/Button'
 import Label from '../../components/atoms/Label'
-import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useAtom } from 'jotai'
-import { countAtom } from '../../store/countAtom'
+import { useDispatch } from 'react-redux'
+import counterSlice from '@/app/components/features/counter/counterSlice'
+import { useAppSelector } from '@/app/util/useAppSelector'
 
 export default function Count() {
-  const [countState, setCountState] = useAtom(countAtom)
-  const [count, setCount] = useState(countState)
+  const dispatch = useDispatch()
+  const count = useAppSelector((state) => state.counter.value)
   const { t } = useTranslation('count')
 
-  const addCount = () => {
-    setCount(count + 1)
-    setCountState(count + 1)
+  const addCount = (val: number) => {
+    dispatch(counterSlice.actions.increase(val))
   }
 
-  const subCount = () => {
-    setCount(count - 1)
-    setCountState(count - 1)
+  const subCount = (val: number) => {
+    dispatch(counterSlice.actions.decrease(val))
   }
 
   return (
@@ -33,7 +31,7 @@ export default function Count() {
         size="small"
         variant="outlined"
         color="success"
-        onClick={() => addCount()}
+        onClick={() => addCount(1)}
       >
         +
       </Button>
@@ -41,7 +39,7 @@ export default function Count() {
         size="small"
         variant="outlined"
         color="error"
-        onClick={() => subCount()}
+        onClick={() => subCount(1)}
       >
         -
       </Button>
